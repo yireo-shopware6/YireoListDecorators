@@ -1,0 +1,40 @@
+{
+  "name": "yireo/shopware6-list-decorators",
+  "description": "List all service decorators",
+  "type": "shopware-platform-plugin",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Jisse Reitsma"
+    }
+  ],
+  "require": {
+    "shopware/core": "~6.4"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Yireo\\ListDecorators\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "Yireo\\ListDecorators\\YireoListDecorators",
+    "copyright": "Jisse Reitsma",
+    "label": {
+      "de-DE": "YireoListDecorators",
+      "en-GB": "YireoListDecorators"
+    },
+    "description": {
+      "de-DE": "List all service decorators",
+      "en-GB": "List all service decorators"
+    },
+    "manufacturerLink": {
+      "de-DE": "https://acme.org",
+      "en-GB": "https://acme.org"
+    },
+    "supportLink": {
+      "de-DE": "https://acme.org",
+      "en-GB": "https://acme.org"
+    }
+  }
+}
