@@ -26,13 +26,15 @@ class ListDecoratorsCommand extends Command
         $table = new Table($output);
         $table->setHeaders([
             'Service decorator',
-            'Original service'
+            'Original service',
+            'Parent type'
         ]);
 
         foreach ($this->serviceDecorators as $serviceDecorator) {
             $table->addRow([
                get_class($serviceDecorator),
-                $this->getOriginalClass(get_class($serviceDecorator))
+                $this->getOriginalClass(get_class($serviceDecorator)),
+                $this->getParentClassType(get_class($serviceDecorator))
             ]);
         }
 
@@ -54,5 +56,20 @@ class ListDecoratorsCommand extends Command
         }
 
         return '';
+    }
+
+    private function getParentClassType(string $className): string
+    {
+        $parentClassName = get_parent_class($className);
+        if ($parentClassName) {
+            return 'extends';
+        }
+
+        $interfaceNames = class_implements($className);
+        if (!empty($interfaceNames)) {
+            return 'implements';
+        }
+
+        return 'none';
     }
 }

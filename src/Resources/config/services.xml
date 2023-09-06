@@ -3,10 +3,9 @@
 <container xmlns="http://symfony.com/schema/dic/services"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="https://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
-
     <services>
-        <service id="Yireo\ListDecorators\Console\Command\ListDecoratorsCommand">
-            <tag name="console.command" />
+        <service id="Yireo\ListDecorators\Console\Command\ListDecoratorsCommand" autoconfigure="true">
+            <tag name="console.command"/>
             <argument type="tagged_iterator" tag="container.decorator"/>
         </service>
     </services>
